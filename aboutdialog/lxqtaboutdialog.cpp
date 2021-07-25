@@ -61,17 +61,17 @@ AboutDialogPrivate::AboutDialogPrivate()
     autorsBrowser->setHtml(css + authorsText());
     autorsBrowser->viewport()->setAutoFillBackground(false);
 
-    thanksBrowser->setHtml(css + thanksText());
-    thanksBrowser->viewport()->setAutoFillBackground(false);
+    // thanksBrowser->setHtml(css + thanksText());
+    // thanksBrowser->viewport()->setAutoFillBackground(false);
 
-    translationsBrowser->setHtml(css + translationsText());
-    translationsBrowser->viewport()->setAutoFillBackground(false);
+    // translationsBrowser->setHtml(css + translationsText());
+    // translationsBrowser->viewport()->setAutoFillBackground(false);
 
-    TechnicalInfo info;
-    techBrowser->setHtml(info.html());
-    techBrowser->viewport()->setAutoFillBackground(false);
+    // TechnicalInfo info;
+    // techBrowser->setHtml(info.html());
+    // techBrowser->viewport()->setAutoFillBackground(false);
 
-    connect(techCopyToClipboardButton, &QPushButton::clicked, this, &AboutDialogPrivate::copyToCliboardTechInfo);
+    // connect(techCopyToClipboardButton, &QPushButton::clicked, this, &AboutDialogPrivate::copyToCliboardTechInfo);
     this->setAttribute(Qt::WA_DeleteOnClose);
     show();
 

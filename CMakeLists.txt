@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.1.0 FATAL_ERROR)
 # The cmake_minimum_required(VERSION) command implicitly invokes the cmake_policy(VERSION)
 # command to specify that the current project code is written for the given range of CMake
 # versions.
-project(lxqt-about)
+project(px-about)
 
 option(UPDATE_TRANSLATIONS "Update source translation translations/*.ts files" OFF)
 

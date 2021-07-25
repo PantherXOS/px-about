@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>About LXQt</string>
+   <string>About PantherX</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
@@ -95,7 +95,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_4">
+     <!-- <widget class="QWidget" name="tab_4">
       <attribute name="title">
        <string comment="About dialog, Tab title">Thanks</string>
       </attribute>
@@ -111,8 +111,8 @@
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QWidget" name="translationsTab">
+     </widget> -->
+     <!-- <widget class="QWidget" name="translationsTab">
       <attribute name="title">
        <string comment="About dialog, Tab title">Translations</string>
       </attribute>
@@ -128,8 +128,8 @@
         </widget>
        </item>
       </layout>
-     </widget>
-     <widget class="QWidget" name="tab_2">
+     </widget> -->
+     <!-- <widget class="QWidget" name="tab_2">
       <attribute name="title">
        <string comment="About dialog, Tab title">Technical Info</string>
       </attribute>
@@ -142,9 +142,9 @@
          <property name="openExternalLinks">
           <bool>true</bool>
          </property>
-        </widget>
-       </item>
-       <item>
+        </widget> -->
+       <!-- </item> -->
+       <!-- <item>
         <layout class="QHBoxLayout" name="horizontalLayout">
          <item>
           <spacer name="horizontalSpacer">
@@ -169,9 +169,9 @@
         </layout>
        </item>
       </layout>
-     </widget>
+     </widget>-->
     </widget>
-   </item>
+   </item> 
    <item>
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="standardButtons">

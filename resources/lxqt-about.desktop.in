@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Exec=lxqt-about
+Exec=px-about
 Icon=help-about
-Categories=System;Documentation;
+Categories=PX-About;
 OnlyShowIn=LXQt;
 
 #TRANSLATIONS_DIR=translations
