@@ -59,7 +59,7 @@ lxqt_app_translation_loader(QM_LOADER ${PROJECT_NAME})
 
 lxqt_translate_desktop(DESKTOP_FILES
     SOURCES
-    resources/lxqt-about.desktop.in
+    resources/px-about.desktop.in
     USE_YAML
 )
 #************************************************

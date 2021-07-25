@@ -1,3 +1,3 @@
-project(lxqt-about)
+project(px-about)
 
 build_component("." "")
