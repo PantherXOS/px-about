@@ -37,6 +37,7 @@
 
 AboutDialogPrivate::AboutDialogPrivate()
 {
+    setWindowIcon(QIcon::fromTheme(QString::fromStdString("help-about")));
     setupUi(this);
 
     QString css=QStringLiteral("<style TYPE='text/css'> "
@@ -48,10 +49,11 @@ AboutDialogPrivate::AboutDialogPrivate()
                     ".techInfoKey { white-space: nowrap ; margin: 0 20px 0 16px; } "
                 "</style>")
             ;
-
-    iconLabel->setFixedSize(48, 48);
+    QIcon qicon = QIcon::fromTheme(QString::fromStdString("panther"));
+    QPixmap pixmap = qicon.pixmap(50, QIcon::Normal, QIcon::On);
+ //iconLabel->setFixedSize(30, 30);
     iconLabel->setScaledContents(true);
-    iconLabel->setPixmap(QPixmap(QStringLiteral(LXQT_SHARE_DIR) + QStringLiteral("/graphics/lxqt_logo.png")));
+    iconLabel->setPixmap(pixmap);
 
     nameLabel->setText(css + titleText());
 
@@ -79,8 +81,8 @@ AboutDialogPrivate::AboutDialogPrivate()
 
 QString AboutDialogPrivate::titleText() const
 {
-    return QStringLiteral("<div class=name>%1</div><div class=ver>%2</div>").arg(QStringLiteral("LXQt"),
-                tr("Version: %1").arg(QStringLiteral(LXQT_VERSION)));
+    return QStringLiteral("<div class=name>%1</div><div class=ver>%2</div>").arg(QStringLiteral("PantherX OS"),
+                tr("Version: %1").arg(QStringLiteral("Beta 1")));
 
 }
 
@@ -90,65 +92,38 @@ QString AboutDialogPrivate::aboutText() const
         "<p>%1</p>"
         "<p>%2</p>"
         "<p>%3</p>"
-        "<p>%4</p>"
-        "<p>%5</p>"
-        "<p>%6</p>"
-        "<p>%7</p>"
+        "<p>%4</p>"        
         )
         .arg(
-            tr("Advanced, easy-to-use, and fast desktop environment based on Qt technologies.",
+            tr(" A modern, Unix-like computer operating system with a light-weight desktop environment\n, a set of highly polished,homegrown applications, and access to thousands more trough Software.",
                "About dialog, 'About' tab text"),
-            tr("LXQt would not have been possible without the <a %1>Razor-qt</a> project and its many contributors.",
-               "About dialog, 'About' tab text").arg(QStringLiteral("href=\"https://blog.lxde.org/2014/11/21/in-memory-of-razor-qt/\"")),
-            tr("Copyright: © %1-%2 %3", "About dialog, 'About' tab text")
-                .arg(QStringLiteral("2010"), QDate::currentDate().toString(QStringLiteral("yyyy")), QStringLiteral("LXQt team")),
+            // tr("LXQt would not have been possible without the <a %1>Razor-qt</a> project and its many contributors.",
+            //    "About dialog, 'About' tab text").arg(QStringLiteral("href=\"https://blog.lxde.org/2014/11/21/in-memory-of-razor-qt/\"")),
+            // tr("Copyright: © %1-%2 %3", "About dialog, 'About' tab text")
+            //     .arg(QStringLiteral("2010"), QDate::currentDate().toString(QStringLiteral("yyyy")), QStringLiteral("LXQt team")),
             tr("Homepage: %1", "About dialog, 'About' tab text")
-                .arg(QStringLiteral("<a href=\"https://lxqt-project.org\">https://lxqt-project.org</a>")),
+                .arg(QStringLiteral("<a href=\"https://www.pantherx.org\">https://www.pantherx.org</a>")),
            tr("Wiki: %1", "About dialog, 'About' tab text")
-                .arg(QStringLiteral("<a href=\"https://github.com/lxqt/lxqt/wiki\">https://github.com/lxqt/lxqt/wiki</a>")),
-           tr("Development: %1", "About dialog, 'About' tab text")
-                .arg(QStringLiteral("<a href=\"https://github.com/lxqt/\">https://github.com/lxqt</a>")),
-            tr("License: %1", "About dialog, 'About' tab text")
-                .arg(QStringLiteral("<a href=\"https://www.gnu.org/licenses/lgpl-2.1.html\">GNU Lesser General Public License version 2.1 or later</a>"
-                     " and partly under the "
-                     "<a href=\"https://www.gnu.org/licenses/gpl-2.0.html\">GNU General Public License version 2</a>"))
+                .arg(QStringLiteral("<a href=\"https://wiki.pantherx.org\">https://wiki.pantherx.org</a>")),
+           tr("Forum: %1", "About dialog, 'About' tab text")
+                .arg(QStringLiteral("<a href=\"https://community.pantherx.org\">https://community.pantherx.org</a>"))
+            // tr("License: %1", "About dialog, 'About' tab text")
+            //     .arg(QStringLiteral("<a href=\"https://www.gnu.org/licenses/lgpl-2.1.html\">GNU Lesser General Public License version 2.1 or later</a>"
+            //          " and partly under the "
+            //          "<a href=\"https://www.gnu.org/licenses/gpl-2.0.html\">GNU General Public License version 2</a>"))
             );
 }
 
 QString AboutDialogPrivate::authorsText() const
 {
     return QStringLiteral("<p>%1</p><p>%2</p>").arg(
-                tr("LXQt is developed by the <a %1>LXQt Team and contributors</a>.", "About dialog, 'Authors' tab text")
-                    .arg(QStringLiteral(" href=\"https://github.com/lxqt\"")),
+                tr("Pantherx is developed by the <a %1>Pantherx Team and contributors</a>.", "About dialog, 'Authors' tab text")
+                    .arg(QStringLiteral("href=\"https://www.pantherx.org/about\"")),
                 tr("If you are interested in working with our development team, <a %1>join us</a>.", "About dialog, 'Authors' tab text")
-                    .arg(QStringLiteral("href=\"https://github.com/orgs/lxqt/people\""))
+                    .arg(QStringLiteral("href=\"https://www.pantherx.org/contact\""))
                 );
 }
 
-
-QString AboutDialogPrivate::thanksText() const
-{
-    return QStringLiteral(
-                "%1"
-                "<ul>"
-                "<li>Alexey Nosov (for the A-MeGo theme)</li>"
-                "<li>Alexander Zakher (the Razor-qt name)</li>"
-                "<li>Andy Fitzsimon (logo/icon)</li>"
-                "<li>Eugene Pivnev (QtDesktop)</li>"
-                "<li>Manuel Meier (for ideas)</li>"
-                "<li>KDE &lt;<a href=\"https://kde.org/\">https://kde.org/</a>&gt;</li>"
-                ).arg(tr("Special thanks to:", "About dialog, 'Thanks' tab text"));
-}
-
-QString AboutDialogPrivate::translationsText() const
-{
-    TranslatorsInfo translatorsInfo;
-    return QStringLiteral("%1<p><ul>%2</ul>").arg(
-                tr("LXQt is translated into many languages thanks to the work of the translation teams all over the world. Translations can be done in <a %1>LXQt-Weblate</a>.", "About dialog, 'Translations' tab text")
-                .arg(QStringLiteral("href=\"https://translate.lxqt-project.org\"")),
-                translatorsInfo.asHtml()
-                );
-}
 
 AboutDialog::AboutDialog()
 {
