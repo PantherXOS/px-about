@@ -117,7 +117,7 @@ QString AboutDialogPrivate::aboutText() const
 QString AboutDialogPrivate::authorsText() const
 {
     return QStringLiteral("<p>%1</p><p>%2</p>").arg(
-                tr("PantherXS is developed by the <a %1>PantherX Team and contributors</a>.", "About dialog, 'Authors' tab text")
+                tr("PantherX is developed by the <a %1>PantherX Team and contributors</a>.", "About dialog, 'Authors' tab text")
                     .arg(QStringLiteral("href=\"https://www.pantherx.org/about\"")),
                 tr("If you are interested in working with our development team, <a %1>join us</a>.", "About dialog, 'Authors' tab text")
                     .arg(QStringLiteral("href=\"https://www.pantherx.org/contact\""))
