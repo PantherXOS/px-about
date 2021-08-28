@@ -51,7 +51,7 @@ AboutDialogPrivate::AboutDialogPrivate()
             ;
     QIcon qicon = QIcon::fromTheme(QString::fromStdString("panther"));
     QPixmap pixmap = qicon.pixmap(50, QIcon::Normal, QIcon::On);
- //iconLabel->setFixedSize(30, 30);
+    iconLabel->setFixedSize(50, 30);
     iconLabel->setScaledContents(true);
     iconLabel->setPixmap(pixmap);
 
@@ -82,7 +82,7 @@ AboutDialogPrivate::AboutDialogPrivate()
 QString AboutDialogPrivate::titleText() const
 {
     return QStringLiteral("<div class=name>%1</div><div class=ver>%2</div>").arg(QStringLiteral("PantherX OS"),
-                tr("Version: %1").arg(QStringLiteral("Beta 1")));
+                tr("Version: %1").arg(QStringLiteral("Beta 2")));
 
 }
 
