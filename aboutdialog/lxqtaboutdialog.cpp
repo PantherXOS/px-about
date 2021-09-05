@@ -45,10 +45,9 @@ AboutDialogPrivate::AboutDialogPrivate()
                     ".name { font-size: 16pt; } "
                     "a { white-space: nowrap ;} "
                     "h2 { font-size: 10pt;} "
-                    "li { line-height: 120%;} "
+                    "li { line-height: 120%; } "
                     ".techInfoKey { white-space: nowrap ; margin: 0 20px 0 16px; } "
-                "</style>")
-            ;
+                "</style>");
     QIcon qicon = QIcon::fromTheme(QString::fromStdString("panther"));
     QPixmap pixmap = qicon.pixmap(50, QIcon::Normal, QIcon::On);
     iconLabel->setFixedSize(50, 30);
@@ -88,13 +87,15 @@ QString AboutDialogPrivate::titleText() const
 
 QString AboutDialogPrivate::aboutText() const
 {
+    auto fontColor = QGuiApplication::palette().color(QPalette::Active, QPalette::WindowText);
     return QStringLiteral(
-        "<p>%1</p>"
-        "<p>%2</p>"
-        "<p>%3</p>"
-        "<p>%4</p>"        
+        "<p style=\"color:%1\">%2</p>"
+        "<p style=\"color:%1\">%3</p>"
+        "<p style=\"color:%1\">%4</p>"
+        "<p style=\"color:%1\">%5</p>"        
         )
         .arg(
+            fontColor.name(),
             tr(" A modern, Unix-like computer operating system with a light-weight desktop environment\n, a set of highly polished,homegrown applications, and access to thousands more trough Software.",
                "About dialog, 'About' tab text"),
             // tr("LXQt would not have been possible without the <a %1>Razor-qt</a> project and its many contributors.",
@@ -103,9 +104,9 @@ QString AboutDialogPrivate::aboutText() const
             //     .arg(QStringLiteral("2010"), QDate::currentDate().toString(QStringLiteral("yyyy")), QStringLiteral("LXQt team")),
             tr("Homepage: %1", "About dialog, 'About' tab text")
                 .arg(QStringLiteral("<a href=\"https://www.pantherx.org\">https://www.pantherx.org</a>")),
-           tr("Wiki: %1", "About dialog, 'About' tab text")
+            tr("Wiki: %1", "About dialog, 'About' tab text")
                 .arg(QStringLiteral("<a href=\"https://wiki.pantherx.org\">https://wiki.pantherx.org</a>")),
-           tr("Forum: %1", "About dialog, 'About' tab text")
+            tr("Forum: %1", "About dialog, 'About' tab text")
                 .arg(QStringLiteral("<a href=\"https://community.pantherx.org\">https://community.pantherx.org</a>"))
             // tr("License: %1", "About dialog, 'About' tab text")
             //     .arg(QStringLiteral("<a href=\"https://www.gnu.org/licenses/lgpl-2.1.html\">GNU Lesser General Public License version 2.1 or later</a>"
@@ -116,7 +117,11 @@ QString AboutDialogPrivate::aboutText() const
 
 QString AboutDialogPrivate::authorsText() const
 {
-    return QStringLiteral("<p>%1</p><p>%2</p>").arg(
+    auto fontColor = QGuiApplication::palette().color(QPalette::Active, QPalette::WindowText);
+    return QStringLiteral(
+            "<p style=\"color:%1\">%2</p>"
+            "<p style=\"color:%1\">%3</p>").arg(
+                fontColor.name(),
                 tr("PantherX is developed by the <a %1>PantherX Team and contributors</a>.", "About dialog, 'Authors' tab text")
                     .arg(QStringLiteral("href=\"https://www.pantherx.org/about\"")),
                 tr("If you are interested in working with our development team, <a %1>join us</a>.", "About dialog, 'Authors' tab text")
