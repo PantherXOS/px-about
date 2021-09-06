@@ -48,6 +48,9 @@ public:
 
 public slots:
     void copyToCliboardTechInfo();
+
+private:
+    QColor fontColor;
 };
 
 #endif // LXQT_ABOUTDIALOG_P_H

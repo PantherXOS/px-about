@@ -39,15 +39,16 @@ AboutDialogPrivate::AboutDialogPrivate()
 {
     setWindowIcon(QIcon::fromTheme(QString::fromStdString("help-about")));
     setupUi(this);
+    fontColor = QGuiApplication::palette().color(QPalette::Active, QPalette::WindowText);
 
     QString css=QStringLiteral("<style TYPE='text/css'> "
                     "body { font-family: sans-serif;} "
                     ".name { font-size: 16pt; } "
-                    "a { white-space: nowrap ;} "
+                    "a { white-space: nowrap ; color: %1} "
                     "h2 { font-size: 10pt;} "
                     "li { line-height: 120%; } "
                     ".techInfoKey { white-space: nowrap ; margin: 0 20px 0 16px; } "
-                "</style>");
+                "</style>").arg(fontColor.name());
     QIcon qicon = QIcon::fromTheme(QString::fromStdString("panther"));
     QPixmap pixmap = qicon.pixmap(50, QIcon::Normal, QIcon::On);
     iconLabel->setFixedSize(50, 30);
@@ -87,7 +88,6 @@ QString AboutDialogPrivate::titleText() const
 
 QString AboutDialogPrivate::aboutText() const
 {
-    auto fontColor = QGuiApplication::palette().color(QPalette::Active, QPalette::WindowText);
     return QStringLiteral(
         "<p style=\"color:%1\">%2</p>"
         "<p style=\"color:%1\">%3</p>"
@@ -117,7 +117,6 @@ QString AboutDialogPrivate::aboutText() const
 
 QString AboutDialogPrivate::authorsText() const
 {
-    auto fontColor = QGuiApplication::palette().color(QPalette::Active, QPalette::WindowText);
     return QStringLiteral(
             "<p style=\"color:%1\">%2</p>"
             "<p style=\"color:%1\">%3</p>").arg(
