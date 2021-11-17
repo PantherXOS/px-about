@@ -82,7 +82,7 @@ AboutDialogPrivate::AboutDialogPrivate()
 QString AboutDialogPrivate::titleText() const
 {
     return QStringLiteral("<div class=name>%1</div><div class=ver>%2</div>").arg(QStringLiteral("PantherX OS"),
-                tr("Version: %1").arg(QStringLiteral("Beta 2")));
+                tr("Version: %1").arg(QStringLiteral("Beta 4")));
 
 }
 
