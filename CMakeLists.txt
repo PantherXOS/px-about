@@ -27,7 +27,7 @@ set(UI_FILES
 )
 
 # Minimum versions
-set(LXQT_MINIMUM_VERSION "1.0.0")
+set(LXQT_MINIMUM_VERSION "1.1.0")
 
 find_package(lxqt ${LXQT_MINIMUM_VERSION} REQUIRED)
 
@@ -90,3 +90,8 @@ install(FILES
     DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/applications"
     COMPONENT Runtime
 )
+install(DIRECTORY
+    resources/hicolor
+    DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/icons"
+    COMPONENT Runtime
+ )
