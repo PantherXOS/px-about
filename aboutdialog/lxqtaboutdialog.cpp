@@ -82,7 +82,7 @@ AboutDialogPrivate::AboutDialogPrivate()
 QString AboutDialogPrivate::titleText() const
 {
     return QStringLiteral("<div class=name>%1</div><div class=ver>%2</div>").arg(QStringLiteral("PantherX OS"),
-                tr("Version: %1").arg(QStringLiteral("Beta 4")));
+                tr("Version: %1").arg(QStringLiteral("Beta 6")));
 
 }
 
@@ -96,7 +96,7 @@ QString AboutDialogPrivate::aboutText() const
         )
         .arg(
             fontColor.name(),
-            tr(" A modern, Unix-like computer operating system with a light-weight desktop environment\n, a set of highly polished,homegrown applications, and access to thousands more trough Software.",
+            tr("A modern operating system that's designed to enable everyone without a PHD in computer science to enjoy a fast, flexible and secure work & entertainment platform that runs for years, with little intervention.",
                "About dialog, 'About' tab text"),
             // tr("LXQt would not have been possible without the <a %1>Razor-qt</a> project and its many contributors.",
             //    "About dialog, 'About' tab text").arg(QStringLiteral("href=\"https://blog.lxde.org/2014/11/21/in-memory-of-razor-qt/\"")),
